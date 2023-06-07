@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Player } from '../shared/ListOfPlayers.js'
-import PlayersPresentation from './PlayersPresentation.js';
+import Players from './Players.js';
 export class Main extends Component {
     constructor() {
         super();
@@ -9,7 +9,7 @@ export class Main extends Component {
         };
       }
       render() {
-        return <PlayersPresentation players={this.state.players}/>
+        return <Players players={this.state.players}/>
       }
     }
     export default Main
