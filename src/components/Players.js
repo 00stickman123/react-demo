@@ -1,6 +1,8 @@
 import React from 'react'
 import { Player } from '../shared/ListOfPlayers.js';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
+import { Icon, CardTitle, Row, Col, Card, Container } from 'react-materialize'
 export default function Players (){
   const [player, setPlayer] = useState([]);
     return (
@@ -11,11 +13,14 @@ export default function Players (){
          <img src={player.img} alt=''/>
            <h3>{player.name}</h3>
            <p className='title'>{player.club}</p>
-           <p className='detail-button'><button  onClick={() =>{setPlayer(player)}}><a href='#popup1' id='openPopUp'>Detail</a></button></p>
+           <p className='detail-button'><Link to={`detail/${player.id}`}> 
+        <p><button>Detail</button></p>
+            </Link>
+          </p>
          </div>
        </div>
       ))}
-      <div id='popup1' className='overlay'>
+      <div  id='popup1' className='overlay'>
           <div className='popup'>
             <img src={player.img} alt=''/>
             <h2>{player.name}</h2>
@@ -27,5 +32,4 @@ export default function Players (){
       </div>
   </div>
     )
-  
 }
